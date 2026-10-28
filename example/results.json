@@ -1,0 +1,233 @@
+{
+  "stages": [
+    {
+      "input": "01_initial.json",
+      "ingestion": {
+        "batch_id": "initial",
+        "new_events": 3,
+        "duplicates": 0,
+        "applied": 3,
+        "stale": 0,
+        "replayed": false
+      },
+      "snapshot": {
+        "orders": [
+          {
+            "order_id": "A",
+            "version": 1,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 10000
+          },
+          {
+            "order_id": "B",
+            "version": 1,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 20000
+          },
+          {
+            "order_id": "C",
+            "version": 1,
+            "deleted": 0,
+            "status": "cancelled",
+            "total_cents": 5000
+          }
+        ],
+        "event_count": 3,
+        "batch_count": 1,
+        "active_orders": 3,
+        "deleted_orders": 0,
+        "confirmed_orders": 2,
+        "confirmed_total_cents": 30000
+      }
+    },
+    {
+      "input": "02_changes.json",
+      "ingestion": {
+        "batch_id": "changes",
+        "new_events": 5,
+        "duplicates": 1,
+        "applied": 4,
+        "stale": 1,
+        "replayed": false
+      },
+      "snapshot": {
+        "orders": [
+          {
+            "order_id": "A",
+            "version": 3,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 12500
+          },
+          {
+            "order_id": "B",
+            "version": 3,
+            "deleted": 1,
+            "status": null,
+            "total_cents": 0
+          },
+          {
+            "order_id": "C",
+            "version": 2,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 5000
+          },
+          {
+            "order_id": "D",
+            "version": 1,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 4000
+          }
+        ],
+        "event_count": 8,
+        "batch_count": 2,
+        "active_orders": 3,
+        "deleted_orders": 1,
+        "confirmed_orders": 3,
+        "confirmed_total_cents": 21500
+      }
+    },
+    {
+      "input": "02_changes.json",
+      "ingestion": {
+        "applied": 4,
+        "batch_id": "changes",
+        "duplicates": 1,
+        "new_events": 5,
+        "replayed": true,
+        "stale": 1
+      },
+      "snapshot": {
+        "orders": [
+          {
+            "order_id": "A",
+            "version": 3,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 12500
+          },
+          {
+            "order_id": "B",
+            "version": 3,
+            "deleted": 1,
+            "status": null,
+            "total_cents": 0
+          },
+          {
+            "order_id": "C",
+            "version": 2,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 5000
+          },
+          {
+            "order_id": "D",
+            "version": 1,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 4000
+          }
+        ],
+        "event_count": 8,
+        "batch_count": 2,
+        "active_orders": 3,
+        "deleted_orders": 1,
+        "confirmed_orders": 3,
+        "confirmed_total_cents": 21500
+      }
+    },
+    {
+      "input": "03_late_event.json",
+      "ingestion": {
+        "batch_id": "late",
+        "new_events": 1,
+        "duplicates": 0,
+        "applied": 0,
+        "stale": 1,
+        "replayed": false
+      },
+      "snapshot": {
+        "orders": [
+          {
+            "order_id": "A",
+            "version": 3,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 12500
+          },
+          {
+            "order_id": "B",
+            "version": 3,
+            "deleted": 1,
+            "status": null,
+            "total_cents": 0
+          },
+          {
+            "order_id": "C",
+            "version": 2,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 5000
+          },
+          {
+            "order_id": "D",
+            "version": 1,
+            "deleted": 0,
+            "status": "confirmed",
+            "total_cents": 4000
+          }
+        ],
+        "event_count": 9,
+        "batch_count": 3,
+        "active_orders": 3,
+        "deleted_orders": 1,
+        "confirmed_orders": 3,
+        "confirmed_total_cents": 21500
+      }
+    }
+  ],
+  "conflict_error": "Order version already claimed by another event id",
+  "rollback_verified": true,
+  "final": {
+    "orders": [
+      {
+        "order_id": "A",
+        "version": 3,
+        "deleted": 0,
+        "status": "confirmed",
+        "total_cents": 12500
+      },
+      {
+        "order_id": "B",
+        "version": 3,
+        "deleted": 1,
+        "status": null,
+        "total_cents": 0
+      },
+      {
+        "order_id": "C",
+        "version": 2,
+        "deleted": 0,
+        "status": "confirmed",
+        "total_cents": 5000
+      },
+      {
+        "order_id": "D",
+        "version": 1,
+        "deleted": 0,
+        "status": "confirmed",
+        "total_cents": 4000
+      }
+    ],
+    "event_count": 9,
+    "batch_count": 3,
+    "active_orders": 3,
+    "deleted_orders": 1,
+    "confirmed_orders": 3,
+    "confirmed_total_cents": 21500
+  }
+}

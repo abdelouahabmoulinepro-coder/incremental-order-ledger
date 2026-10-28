@@ -1,0 +1,8 @@
+{
+  "batch_id":"initial",
+  "events":[
+    {"event_id":"A1","order_id":"A","version":1,"operation":"upsert","status":"confirmed","total_cents":10000},
+    {"event_id":"B1","order_id":"B","version":1,"operation":"upsert","status":"confirmed","total_cents":20000},
+    {"event_id":"C1","order_id":"C","version":1,"operation":"upsert","status":"cancelled","total_cents":5000}
+  ]
+}

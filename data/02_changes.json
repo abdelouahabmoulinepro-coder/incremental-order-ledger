@@ -1,0 +1,11 @@
+{
+  "batch_id":"changes",
+  "events":[
+    {"event_id":"A3","order_id":"A","version":3,"operation":"upsert","status":"confirmed","total_cents":12500},
+    {"event_id":"A2","order_id":"A","version":2,"operation":"upsert","status":"confirmed","total_cents":11000},
+    {"event_id":"B3","order_id":"B","version":3,"operation":"delete"},
+    {"event_id":"C2","order_id":"C","version":2,"operation":"upsert","status":"confirmed","total_cents":5000},
+    {"event_id":"D1","order_id":"D","version":1,"operation":"upsert","status":"confirmed","total_cents":4000},
+    {"event_id":"A3","order_id":"A","version":3,"operation":"upsert","status":"confirmed","total_cents":12500}
+  ]
+}

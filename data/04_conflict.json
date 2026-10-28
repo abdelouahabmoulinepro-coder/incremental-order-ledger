@@ -1,0 +1,7 @@
+{
+  "batch_id":"conflict",
+  "events":[
+    {"event_id":"E1","order_id":"E","version":1,"operation":"upsert","status":"confirmed","total_cents":9900},
+    {"event_id":"A3_CONFLICT","order_id":"A","version":3,"operation":"upsert","status":"confirmed","total_cents":99999}
+  ]
+}

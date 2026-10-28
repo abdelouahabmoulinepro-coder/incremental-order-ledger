@@ -1,0 +1,6 @@
+{
+  "batch_id":"late",
+  "events":[
+    {"event_id":"B2","order_id":"B","version":2,"operation":"upsert","status":"confirmed","total_cents":21000}
+  ]
+}
